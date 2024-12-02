@@ -1,0 +1,16 @@
+---
+name: "Display test"
+
+on:
+  workflow_call:
+
+
+jobs:
+  display_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test display
+        shell: bash
+        run: |
+          echo "::notice title=Selected chart::kube-system"
+          echo "::notice ::Selected chart 'kube-system'"
