@@ -4,6 +4,10 @@ name: "Display test"
 on:
   workflow_dispatch:
 
+env:
+  TRUNCATED_REF: ${{ github.ref_name[0:7] }}
+
+run-name: Deploy - ${{ env.TRUNCATED_REF }}
 
 jobs:
   display_test:
