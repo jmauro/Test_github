@@ -14,3 +14,8 @@ jobs:
           echo "::notice title=Selected chart::kube-system"
           echo "::notice ::Selected chart 'kube-system'"
           echo "::error ::Selected chart 'kube-system'"
+
+      - name: suite
+        shell: bash
+        run: |
+          echo "laors"
