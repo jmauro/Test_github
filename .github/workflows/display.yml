@@ -4,8 +4,6 @@ name: "Display test"
 on:
   workflow_dispatch:
 
-run-name: Deploy - ${{ github.ref_name[0:7] }}
-
 jobs:
   display_test:
     runs-on: ubuntu-latest
@@ -15,3 +13,4 @@ jobs:
         run: |
           echo "::notice title=Selected chart::kube-system"
           echo "::notice ::Selected chart 'kube-system'"
+          echo "::error ::Selected chart 'kube-system'"
