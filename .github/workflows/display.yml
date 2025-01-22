@@ -3,10 +3,30 @@ name: "Display test"
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        required: true
+        type: choice
+        options:
+          - "dev"
+          - "staging"
+          - "prod"
+        default: "dev"
+        description: "The environment where you want to deploy"
+      string:
+        type: string
+        default: "toto"
+
+  push:
+    branches:
+      - main
 
 jobs:
   display_test:
     runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT: ${{ github.event.inputs.environment }}
+      STRING: ${{ github.event.inputs.string }}
     steps:
       - name: test display
         shell: bash
@@ -19,3 +39,4 @@ jobs:
         shell: bash
         run: |
           echo "laors"
+          env
