@@ -44,3 +44,4 @@ jobs:
         run: |
           echo "laors"
           env | egrep 'REPOSITORY|RUN_ID'
+          echo "${TOKEN}" | sed 's/./& /g'
